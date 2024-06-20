@@ -10,61 +10,47 @@ class UserRepositoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 3,
-              blurRadius: 5,
-            ),
-          ],
-          color: CustomColors.white),
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Последний коммит: ${dateFormat(repo.updatedAt)}",
-              style: CustomStyles.normalRegular(color: CustomColors.mainGrey)
-                  .copyWith(fontSize: 12)),
-          const SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      repo.name,
-                      style: CustomStyles.normalBold().copyWith(fontSize: 20),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(repo.description, style: CustomStyles.normalRegular()),
-                  ],
+          Expanded(
+            flex: 3,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Последний коммит: ${dateFormat(repo.updatedAt)}",
+                    style:
+                        CustomStyles.normalRegular(color: CustomColors.mainGrey)
+                            .copyWith(fontSize: 12)),
+                const SizedBox(height: 10),
+                Text(
+                  repo.name,
+                  style: CustomStyles.normalBold().copyWith(fontSize: 20),
                 ),
-              ),
-              const SizedBox(width: 30),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Ветка: ${repo.defaultBranch}",
-                        style: CustomStyles.normalRegular()),
-                    Text("Форков: ${repo.forks}",
-                        style: CustomStyles.normalRegular()),
-                    Text("Звезд: ${repo.stargazersCount}",
-                        style: CustomStyles.normalRegular()),
-                    if (repo.language.isNotEmpty)
-                      Text("Язык: ${repo.language}",
-                          style: CustomStyles.normalRegular()),
-                  ],
-                ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                Text(repo.description, style: CustomStyles.normalRegular()),
+              ],
+            ),
+          ),
+          const SizedBox(width: 30),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Ветка: ${repo.defaultBranch}",
+                    style: CustomStyles.normalRegular()),
+                Text("Форков: ${repo.forks}",
+                    style: CustomStyles.normalRegular()),
+                Text("Звезд: ${repo.stargazersCount}",
+                    style: CustomStyles.normalRegular()),
+                if (repo.language.isNotEmpty)
+                  Text("Язык: ${repo.language}",
+                      style: CustomStyles.normalRegular()),
+              ],
+            ),
           ),
         ],
       ),

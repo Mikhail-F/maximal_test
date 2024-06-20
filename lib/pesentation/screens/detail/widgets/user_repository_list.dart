@@ -27,7 +27,7 @@ class UserRepositoryList extends StatelessWidget {
                           itemCount: state.resitories.length,
                           padding: const EdgeInsets.all(16),
                           separatorBuilder: (context, index) =>
-                              const SizedBox(height: 15),
+                              const Divider(height: 10),
                           itemBuilder: (context, index) {
                             final RepositoryItem repo = state.resitories[index];
                             return UserRepositoryItem(repo: repo);

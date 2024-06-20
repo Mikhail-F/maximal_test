@@ -5,6 +5,6 @@ class ErrorLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Ошабка загрузки страницы");
+    return const Text("Ошибка загрузки страницы");
   }
 }

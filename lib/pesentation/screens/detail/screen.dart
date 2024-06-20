@@ -19,7 +19,7 @@ class UserRepositoryScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           title: Text(
-            "Репозитории",
+            "Репозиторий",
             style: CustomStyles.title(),
           ),
         ),

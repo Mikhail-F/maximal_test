@@ -29,7 +29,6 @@ class SearchScreen extends StatelessWidget {
               color: CustomColors.white,
               padding:
                   const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 10),
-              height: 50,
               child: CustomTextField(
                 controller: _searchController,
                 hint: "Имя пользователя",

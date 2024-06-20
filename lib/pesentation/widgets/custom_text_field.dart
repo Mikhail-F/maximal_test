@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+            const EdgeInsets.all(16),
         filled: true,
         fillColor: CustomColors.secondGrey,
         enabledBorder: OutlineInputBorder(
