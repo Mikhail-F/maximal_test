@@ -36,7 +36,7 @@ class SearchScreen extends StatelessWidget {
                     context.read<SearchCubit>().searchUsers(text: text),
               ),
             ),
-            const UsersList(),
+            UsersList(controller: _searchController),
           ],
         ),
       ),

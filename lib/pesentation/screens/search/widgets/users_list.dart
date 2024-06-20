@@ -9,7 +9,8 @@ import 'package:search_users_test/pesentation/screens/search/widgets/users_not_f
 import 'package:search_users_test/pesentation/widgets/custom_app_loader.dart';
 
 class UsersList extends StatelessWidget {
-  const UsersList({super.key});
+  final TextEditingController controller;
+  const UsersList({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

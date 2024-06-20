@@ -17,6 +17,10 @@ class SearchCubit extends Cubit<SearchState> {
       const Duration(milliseconds: 500),
       () async {
         emit(state.copyWith(isLoading: true, isError: false));
+        // Проверка на пустое поле ввода
+        if (text.trim().isEmpty) {
+          return emit(state.copyWith(isLoading: false, users: []));
+        }
         final Result<Search> result =
             await _feedBackUseCase.searchUsers(text: text);
         if (result.isSuccess) {
@@ -36,7 +40,7 @@ class SearchCubit extends Cubit<SearchState> {
       final String followersUrl = el.followersUrl!.substring(23);
       final Result<int> userFollowers =
           await _feedBackUseCase.getUserFollowers(followersUrl: followersUrl);
-      el.followersCount = userFollowers.value;
+      if (userFollowers.isSuccess) el.followersCount = userFollowers.value;
     }).toList());
   }
 
