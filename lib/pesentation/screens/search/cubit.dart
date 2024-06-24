@@ -46,7 +46,7 @@ class SearchCubit extends Cubit<SearchState> {
 
   @override
   Future<void> close() {
-    EasyDebounce.cancel("searchAirports");
+    EasyDebounce.cancel("searchUsers");
     return super.close();
   }
 }
